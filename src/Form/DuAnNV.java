@@ -1,4 +1,6 @@
 package Form;
 
-public class DuAnNV {
+import javax.swing.*;
+
+public class DuAnNV extends JFrame {
 }
