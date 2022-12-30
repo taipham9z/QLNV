@@ -33,7 +33,8 @@ public class TrangChuQL extends JFrame{
         btnQuanLyDuAn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new DuAnQL().setVisible(true);
+                dispose();
             }
         });
         btnQuanLyNhanVien.addActionListener(new ActionListener() {
@@ -58,5 +59,11 @@ public class TrangChuQL extends JFrame{
 
             }
         });
+
+    }
+
+    public static void main(String[] args) {
+        TrangChuQL trangChuQL = new TrangChuQL();
+        trangChuQL.setVisible(true);
     }
 }

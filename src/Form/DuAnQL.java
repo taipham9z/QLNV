@@ -72,6 +72,7 @@ public class DuAnQL extends JFrame{
         btnDong.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new TrangChuQL().setVisible(true);
                 dispose();
             }
         });
@@ -106,7 +107,12 @@ public class DuAnQL extends JFrame{
                 }
             }
         });
-        setVisible(true);
+        btnThem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addDuAn();
+            }
+        });
     }
     public void replaceDuAn(DuAn duAn, int n) {
         List<DuAn> duAns = new ArrayList<>();
@@ -187,7 +193,7 @@ public class DuAnQL extends JFrame{
         File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
         try {
             writer = new BufferedWriter(new FileWriter(file, true));
-            String input = "\n" + txtMaDA.getText() + "|" + txtTenDA.getText() + "|" + txtChuDauTu.getText() + "|";
+            String input = "\n" + txtMaDA.getText() + "|" + txtTenDA.getText() + "|" + txtChuDauTu.getText() + "|" + txtDuTinhChiPhi.getText() + "|" + (String) comboBox1.getSelectedItem() + "|" + txtChiPhiPhatSinh.getText() + "|" + txtGhiChu.getText();
             writer.write(input);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -197,9 +203,9 @@ public class DuAnQL extends JFrame{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        init();
-//        NhiemVuQL.NhiemVuTable nhiemVuTable = new NhiemVuQL.NhiemVuTable();
-//        tableNhiemVu.setModel(nhiemVuTable);
+        init();
+        DuAnTable duAnTable = new DuAnTable();
+        tableDuAn.setModel(duAnTable);
     }
     public void loadDataFromFile() throws IOException {
         try {
@@ -273,9 +279,5 @@ public class DuAnQL extends JFrame{
                 return Object.class;
             }
         }
-    }
-    public static void main(String[] args) {
-        DuAnQL duAnQL = new DuAnQL();
-
     }
 }
