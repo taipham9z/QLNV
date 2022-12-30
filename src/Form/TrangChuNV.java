@@ -54,6 +54,14 @@ public class TrangChuNV extends JFrame{
                 dispose();
             }
         });
+        btnDuAn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DuAnNV duAnNV = new DuAnNV();
+                setVisible(true);
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {

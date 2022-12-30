@@ -1,6 +1,8 @@
 package Class;
 
-public class DuAn {
+import Form.DuAnNV;
+
+public class DuAn extends DuAnNV{
     private String maDuAn;
     private String tenDuAn;
     private String chuDauTu;
@@ -9,7 +11,7 @@ public class DuAn {
     private int duTinhChiPhi;
     private int chiPhiPhatSinh;
 
-    public DuAn() {
+    public DuAn(String s, String s1, String s2, String s3, String s4, String s5, String s6, String s7) {
     }
 
     public DuAn(String maDuAn, String tenDuAn, String chuDauTu, int duTinhChiPhi, String phongBanPhuTrach , int chiPhiPhatSinh, String ghiChu) {
