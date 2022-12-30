@@ -12,7 +12,7 @@ public class DuAn {
     public DuAn() {
     }
 
-    public DuAn(String maDuAn, String tenDuAn, String chuDauTu, String phongBanPhuTrach, String ghiChu, int duTinhChiPhi, int chiPhiPhatSinh) {
+    public DuAn(String maDuAn, String tenDuAn, String chuDauTu, int duTinhChiPhi, String phongBanPhuTrach , int chiPhiPhatSinh, String ghiChu) {
         this.maDuAn = maDuAn;
         this.tenDuAn = tenDuAn;
         this.chuDauTu = chuDauTu;
