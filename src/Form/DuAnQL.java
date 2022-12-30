@@ -1,4 +1,6 @@
 package Form;
 
-public class DuAnQL {
+import javax.swing.*;
+
+public class DuAnQL extends JFrame {
 }
