@@ -91,32 +91,6 @@ public class NhanVienManager extends JFrame {
 
             }
         });
-        btnThem.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        });
         btnTraCuuMaNV.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -426,54 +400,6 @@ public class NhanVienManager extends JFrame {
             e.printStackTrace();
         }
     }
-
-//    public void xuatBang(){
-//        Vector<String> vctHeader = new Vector<>();
-//        vctHeader.add("Mã nhân viên");
-//        vctHeader.add("Tên nhân viên");
-//        vctHeader.add("Giới tính");
-//        vctHeader.add("Chức vụ");
-//        vctHeader.add("Phòng ban");
-//        vctHeader.add("SĐT");
-//        vctHeader.add("Địa chỉ");
-//        vctHeader.add("Giờ vào làm");
-//        vctHeader.add("Giờ tan làm");
-//        vctHeader.add("Số ngày nghỉ");
-//        vctHeader.add("Lương cơ bản");
-//        vctHeader.add("Tiền thưởng");
-//        Vector vctData = new Vector();
-//        Vector vctRow;
-//        System.out.println(nhanVienDAO.getNhanVienList().size());
-//        for(int i = 0;i < nhanVienDAO.getNhanVienList().size();i++){
-//            vctRow = new Vector();
-//            String maNV = nhanVienDAO.getNhanVienList().get(i).getMaNV();
-//            String tenNV = nhanVienDAO.getNhanVienList().get(i).getTenNV();
-//            String gioiTinh = nhanVienDAO.getNhanVienList().get(i).getGioiTinh();
-//            String chucVu = nhanVienDAO.getNhanVienList().get(i).getChucVu();
-//            String phongBan = nhanVienDAO.getNhanVienList().get(i).getPhongBan();
-//            String sdt = nhanVienDAO.getNhanVienList().get(i).getsDT();
-//            String diaChi = nhanVienDAO.getNhanVienList().get(i).getDiachi();
-//            int gioVaoLam = nhanVienDAO.getNhanVienList().get(i).getGioVaoLam();
-//            int gioTanLam = nhanVienDAO.getNhanVienList().get(i).getGioTanLam();
-//            int soNgayNghi = nhanVienDAO.getNhanVienList().get(i).getSoNgayNghi();
-//            int luongCoBan = nhanVienDAO.getNhanVienList().get(i).getLuongCoBan();
-//            int tienThuong= nhanVienDAO.getNhanVienList().get(i).getTienThuong();
-//            vctRow.add(maNV);
-//            vctRow.add(tenNV);
-//            vctRow.add(gioiTinh);
-//            vctRow.add(chucVu);
-//            vctRow.add(phongBan);
-//            vctRow.add(sdt);
-//            vctRow.add(diaChi);
-//            vctRow.add(gioVaoLam);
-//            vctRow.add(gioTanLam);
-//            vctRow.add(soNgayNghi);
-//            vctRow.add(luongCoBan);
-//            vctRow.add(tienThuong);
-//            vctData.add(vctRow);
-//        }
-//        tableNhanVien.setModel(new DefaultTableModel(vctData, vctHeader));
-//    }
     public static class NhanVienTable extends AbstractTableModel {
         private String[] COLUMNS = {"Mã nhân viên", "Tên nhân viên", "Giới tính", "Chức vụ", "Phòng ban", "SĐT", "Địa chỉ", "Giờ vào làm", "Giờ tan làm", "Số ngày nghỉ", "Lương cơ bản", "Tiền thưởng"};
         private List<NhanVien> nhanVienList = nhanVienDAO.getNhanVienList();
