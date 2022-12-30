@@ -23,6 +23,9 @@ public class DuAnNV extends JFrame {
     public DuAnNV() {
         setContentPane(mainpanel);
         setSize(1000,500);
+        setTitle("Dự án");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         init();
         DuAnNVTable duAnTable = new DuAnNVTable();
         tableDuAnNV.setModel(duAnTable);

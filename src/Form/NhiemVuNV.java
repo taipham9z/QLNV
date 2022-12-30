@@ -23,6 +23,9 @@ public class NhiemVuNV extends JFrame {
     public NhiemVuNV (){
         setContentPane(mainpanel);
         setSize(1000,500);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Nhiệm vụ");
         init();
         NhiemVuNVTable nhiemVuNVTable = new NhiemVuNVTable();
         table1.setModel(nhiemVuNVTable);

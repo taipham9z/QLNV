@@ -33,6 +33,9 @@ public class DuAnQL extends JFrame{
     public DuAnQL(){
         setContentPane(mainPanel);
         setSize(1000, 500);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Quản lý dự án");
         init();
         DuAnTable duAnTable = new DuAnTable();
         tableDuAn.setModel(duAnTable);

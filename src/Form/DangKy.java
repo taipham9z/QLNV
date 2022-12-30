@@ -28,6 +28,7 @@ public class DangKy extends JFrame {
         setSize(300, 400);
         setTitle("Đăng ký");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(nhanvienRadioButton);
         buttonGroup.add(quanlyRadioButton);

@@ -42,6 +42,8 @@ public class NhanVienManager extends JFrame {
         setContentPane(mainPanel);
         setSize(1000, 700);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Quản lý nhân viên");
         init();
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(femaleRadioButton);

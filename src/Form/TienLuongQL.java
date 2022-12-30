@@ -31,6 +31,9 @@ public class TienLuongQL extends JFrame{
     public TienLuongQL(){
         setContentPane(mainPanel);
         setSize(600, 400);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Quản lý tiền lương");
         txtMaNV.setEditable(false);
         txtNhanVien.setEditable(false);
         init();

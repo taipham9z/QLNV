@@ -16,6 +16,9 @@ public class TrangChuNV extends JFrame{
     public TrangChuNV(){
         setContentPane(mainPanel);
         setSize(500, 400);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Trang chủ của nhân viên");
         btnThoat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

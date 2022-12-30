@@ -38,6 +38,9 @@ public class NhiemVuQL extends JFrame {
     public NhiemVuQL(){
         setContentPane(mainPanel);
         setSize(1000, 600);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Quản lý nhiệm vụ");
         init();
         NhiemVuTable nhiemVuTable = new NhiemVuTable();
         tableNhiemVu.setModel(nhiemVuTable);

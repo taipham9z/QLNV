@@ -28,6 +28,9 @@ public class TienLuongNV extends JFrame {
     public TienLuongNV(){
         setContentPane(mainPanel);
         setSize(700, 400);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Tiền lương");
         init();
         TienLuongTable tienLuongTable = new TienLuongTable();
         tableDanhSach.setModel(tienLuongTable);

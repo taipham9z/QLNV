@@ -23,6 +23,9 @@ public class NhanVienView extends JFrame {
     public NhanVienView(){
         setContentPane(mainPanel);
         setSize(1000, 500);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Nhân viên");
         init();
         NhanVienViewTable nhanVienViewTable = new NhanVienViewTable();
         tableNhanVienView.setModel(nhanVienViewTable);

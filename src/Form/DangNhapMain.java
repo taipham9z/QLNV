@@ -1,6 +1,7 @@
 package Form;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 import Class.TaiKhoan;
@@ -16,6 +17,7 @@ public class DangNhapMain extends JFrame{
     private JButton btnDangNhap;
 
     private JButton btnDangKy;
+    private JLabel lbDangNhap;
 
     private static DangNhapMain dangNhapMain = new DangNhapMain();
     public DangNhapMain(){
@@ -23,6 +25,7 @@ public class DangNhapMain extends JFrame{
         setSize(432, 256);
         setTitle("Đăng nhập/Đăng ký");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         //Đăng ký
         btnDangKy.addActionListener(new ActionListener() {
             @Override

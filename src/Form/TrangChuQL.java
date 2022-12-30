@@ -16,6 +16,9 @@ public class TrangChuQL extends JFrame{
     public TrangChuQL()  {
         setContentPane(mainPanel);
         setSize(500, 400);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Trang chủ của quản lý");
         btnThoat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -18,6 +18,9 @@ public class TraCuuNV extends JFrame{
     public TraCuuNV(){
         setContentPane(panel1);
         setSize(500, 160);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setTitle("Tra cứu nhân viên");
         init();
         btnTraCuu.addActionListener(new ActionListener() {
             @Override
