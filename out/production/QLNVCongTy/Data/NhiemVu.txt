@@ -3,3 +3,7 @@ Nhân viên|Phòng lao động|Nhận việc và làm theo yêu cầu quản lý
 Công nhân|Phòng lao động|Làm một công việc nhất định trong quy trình
 Thư kí|Phòng nhân sự|Sắp xếp lịch cho giám đốc
 Kỹ sư|Phòng chiến lược và phát triển|Thiết kế các chương trình
+Quản lý|Phòng chiến lược và phát triển|Nhận việc
+Bảo vệ|Phòng lao động|Bảo vệ
+Quản lý|Phòng chiến lược và phát triển|Nhận việc
+Bảo vệ|Phòng lao động|Bảo vệ
