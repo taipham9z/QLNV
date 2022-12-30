@@ -24,7 +24,7 @@ public class DuAnNV extends JFrame {
 
     public DuAnNV() {
         setContentPane(mainpanel);
-        setSize(600, 400);
+        setSize(1000,500);
         init();
         DuAnNVTable duAnNVTable = new DuAnNVTable();
         table1.setModel(duAnNVTable);
@@ -32,13 +32,14 @@ public class DuAnNV extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 init();
-                DuAnNV.DuAnNVTable nhiemVuNVTable = new DuAnNV.DuAnNVTable();
-                table1.setModel(nhiemVuNVTable);
+                DuAnNV.DuAnNVTable duAnNVTable = new DuAnNV.DuAnNVTable();
+                table1.setModel(duAnNVTable);
             }
         });
         btnDong.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 dispose();
             }
         });
