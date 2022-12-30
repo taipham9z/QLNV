@@ -46,14 +46,6 @@ public class TrangChuNV extends JFrame{
                 dispose();
             }
         });
-        btnNhiemVu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                NhiemVuNV nhiemVuNV = new NhiemVuNV();
-                nhiemVuNV.setVisible(true);
-                dispose();
-            }
-        });
         btnTienLuong.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
