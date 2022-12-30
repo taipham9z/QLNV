@@ -125,9 +125,4 @@ public class NhanVienView extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        NhanVienView nhanVienView = new NhanVienView();
-        nhanVienView.setVisible(true);
-    }
-
 }

@@ -62,9 +62,4 @@ public class TrangChuQL extends JFrame{
         });
 
     }
-
-    public static void main(String[] args) {
-        TrangChuQL trangChuQL = new TrangChuQL();
-        trangChuQL.setVisible(true);
-    }
 }

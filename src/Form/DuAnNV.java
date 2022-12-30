@@ -114,8 +114,4 @@ public class DuAnNV extends JFrame {
         }
 
     }
-    public static void main(String[] args) {
-        DuAnNV duAnNV = new DuAnNV();
-        duAnNV.setVisible(true);
-    }
 }

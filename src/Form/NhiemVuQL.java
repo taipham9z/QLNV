@@ -284,9 +284,4 @@ public class NhiemVuQL extends JFrame {
         }
     }
 
-
-    public static void main(String[] args) {
-        NhiemVuQL nhiemVuQL = new NhiemVuQL();
-        nhiemVuQL.setVisible(true);
-    }
 }

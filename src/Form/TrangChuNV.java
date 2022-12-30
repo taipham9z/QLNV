@@ -63,9 +63,4 @@ public class TrangChuNV extends JFrame{
             }
         });
     }
-
-    public static void main(String[] args) {
-        TrangChuNV trangChuNV = new TrangChuNV();
-        trangChuNV.setVisible(true);
-    }
 }
