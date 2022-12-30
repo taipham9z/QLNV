@@ -30,6 +30,38 @@ public class TrangChuNV extends JFrame{
                 dispose();
             }
         });
+        btnDanhSachNhanVien.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NhanVienView nhanVienView = new NhanVienView();
+                nhanVienView.setVisible(true);
+                dispose();
+            }
+        });
+        btnNhiemVu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NhiemVuNV nhiemVuNV = new NhiemVuNV();
+                nhiemVuNV.setVisible(true);
+                dispose();
+            }
+        });
+        btnNhiemVu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NhiemVuNV nhiemVuNV = new NhiemVuNV();
+                nhiemVuNV.setVisible(true);
+                dispose();
+            }
+        });
+        btnTienLuong.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                TienLuongNV tienLuongNV = new TienLuongNV();
+                setVisible(true);
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,7 @@
 package Form;
 
-public class NhiemVuNV {
+import javax.swing.*;
+
+public class NhiemVuNV extends JFrame {
+
 }

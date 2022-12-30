@@ -7,10 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import Class.DuAn;
 public class DuAnQL extends JFrame{
@@ -29,8 +26,8 @@ public class DuAnQL extends JFrame{
     private JTable tableDuAn;
     private JPanel mainPanel;
     private BufferedReader bufferedReader;
-    static List<DuAn> duAnList;
-    Set<String> phongBanPhuTrach;
+    List<DuAn> duAnList;
+    Set<String> phongBanSet;
     List<String> phongBan;
     DuAn duAnSelected;
     public DuAnQL(){
@@ -50,9 +47,6 @@ public class DuAnQL extends JFrame{
                 txtDuTinhChiPhi.setText(String.valueOf(duAnSelected.getDuTinhChiPhi()));
                 txtChiPhiPhatSinh.setText(String.valueOf(duAnSelected.getChiPhiPhatSinh()));
                 txtGhiChu.setText(duAnSelected.getGhiChu());
-                init();
-                DuAnTable duAnTable = new DuAnTable();
-                tableDuAn.setModel(duAnTable);
             }
 
             @Override
@@ -99,8 +93,17 @@ public class DuAnQL extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 DuAn duAn1 = new DuAn(txtMaDA.getText(), txtTenDA.getText(), txtChuDauTu.getText(), Integer.parseInt(txtDuTinhChiPhi.getText()), (String) comboBox1.getSelectedItem(), Integer.parseInt(txtChiPhiPhatSinh.getText()), txtGhiChu.getText());
-
                 replaceDuAn(duAn1, tableDuAn.getSelectedRow());
+            }
+        });
+        btnXoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    deleteNhiemVu(tableDuAn.getSelectedRow());
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         setVisible(true);
@@ -109,7 +112,7 @@ public class DuAnQL extends JFrame{
         List<DuAn> duAns = new ArrayList<>();
         BufferedReader reader = null;
         try {
-            DuAn x = null;
+            DuAn x;
             reader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt"));
             String line = "";
             while ((line = reader.readLine()) != null) {
@@ -117,7 +120,6 @@ public class DuAnQL extends JFrame{
                 x = new DuAn(a[0], a[1], a[2], Integer.parseInt(a[3]), a[4], Integer.parseInt(a[5]), a[6]);
                 duAns.add(x);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -128,11 +130,9 @@ public class DuAnQL extends JFrame{
             }
         }
         duAns.set(n, duAn);
-        System.out.println(duAns);
         BufferedWriter writer = null;
         try{
             File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
-            //writer = new FileWriter(file, true);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < duAns.size(); i++) {
                 String w;
@@ -157,6 +157,50 @@ public class DuAnQL extends JFrame{
         DuAnTable duAnTable = new DuAnTable();
         tableDuAn.setModel(duAnTable);
     }
+    public void deleteNhiemVu(int n) throws IOException {
+        duAnList.remove(n);
+        BufferedWriter writer = null;
+        try{
+            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
+            writer = new BufferedWriter(new FileWriter(file));
+            for (int i = 0; i < duAnList.size(); i++) {
+                String w;
+                if(i==0){
+                    w = duAnList.get(i).getMaDuAn() + "|" + duAnList.get(i).getTenDuAn() + "|" + duAnList.get(i).getChuDauTu() + "|" + duAnList.get(i).getDuTinhChiPhi() + "|" + duAnList.get(i).getPhongBanPhuTrach() + "|" + duAnList.get(i).getChiPhiPhatSinh() + "|" + duAnList.get(i).getGhiChu();
+                }
+                else{
+                    w = "\n" + duAnList.get(i).getMaDuAn() + "|" + duAnList.get(i).getTenDuAn() + "|" + duAnList.get(i).getChuDauTu() + "|" + duAnList.get(i).getDuTinhChiPhi() + "|" + duAnList.get(i).getPhongBanPhuTrach() + "|" + duAnList.get(i).getChiPhiPhatSinh() + "|" + duAnList.get(i).getGhiChu();
+                }
+                writer.write(w);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }finally {
+            writer.close();
+        }
+        init();
+        DuAnTable duAnTable = new DuAnTable();
+        tableDuAn.setModel(duAnTable);
+    }
+    public void addDuAn(){
+        BufferedWriter writer;
+        File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
+        try {
+            writer = new BufferedWriter(new FileWriter(file, true));
+            String input = "\n" + txtMaDA.getText() + "|" + txtTenDA.getText() + "|" + txtChuDauTu.getText() + "|";
+            writer.write(input);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+//        init();
+//        NhiemVuQL.NhiemVuTable nhiemVuTable = new NhiemVuQL.NhiemVuTable();
+//        tableNhiemVu.setModel(nhiemVuTable);
+    }
     public void loadDataFromFile() throws IOException {
         try {
             DuAn x = null;
@@ -166,10 +210,12 @@ public class DuAnQL extends JFrame{
                 String[] a = line.split("\\|");
                 x = new DuAn(a[0], a[1], a[2], Integer.parseInt(a[3]), a[4], Integer.parseInt(a[5]), a[6]);
                 duAnList.add(x);
-                phongBanPhuTrach.add(a[4]);
+                phongBan.add(a[4]);
             }
-            phongBan = new ArrayList<>(phongBanPhuTrach);
-            for (String a:phongBan) {
+            phongBanSet = new HashSet<>(phongBan);
+            phongBan = new ArrayList<>(phongBanSet);
+            comboBox1.removeAllItems();
+            for (String a:phongBanSet) {
                 comboBox1.addItem(a);
             }
         } catch (IOException e) {
@@ -180,15 +226,16 @@ public class DuAnQL extends JFrame{
     }
     public void init(){
         duAnList = new ArrayList<>();
-        phongBanPhuTrach = new HashSet<>();
+        phongBanSet = new HashSet<>();
+        phongBan = new ArrayList<>();
         try {
             loadDataFromFile();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    public static class DuAnTable extends AbstractTableModel{
-        private String[] COLUMNS = {"Mã dự án", "Tên dự án", "Chủ đầu tư", "Dự tính chi phí", "Phòng ban phụ trách", "Chi phí phát sinh", "Ghi chú"};
+    public class DuAnTable extends AbstractTableModel{
+        String[] COLUMNS = {"Mã dự án", "Tên dự án", "Chủ đầu tư", "Dự tính chi phí", "Phòng ban phụ trách", "Chi phí phát sinh", "Ghi chú"};
         @Override
         public int getRowCount() {
             return duAnList.size();
