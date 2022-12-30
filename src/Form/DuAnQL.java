@@ -29,8 +29,8 @@ public class DuAnQL extends JFrame{
     private JTable tableDuAn;
     private JPanel mainPanel;
     private BufferedReader bufferedReader;
-    static List<DuAn> duAnList = new ArrayList<>();
-    Set<String> phongBanPhuTrach = new HashSet<>();
+    static List<DuAn> duAnList;
+    Set<String> phongBanPhuTrach;
     List<String> phongBan;
     DuAn duAnSelected;
     public DuAnQL(){
@@ -99,10 +99,8 @@ public class DuAnQL extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 DuAn duAn1 = new DuAn(txtMaDA.getText(), txtTenDA.getText(), txtChuDauTu.getText(), Integer.parseInt(txtDuTinhChiPhi.getText()), (String) comboBox1.getSelectedItem(), Integer.parseInt(txtChiPhiPhatSinh.getText()), txtGhiChu.getText());
+
                 replaceDuAn(duAn1, tableDuAn.getSelectedRow());
-                init();
-                DuAnTable duAnTable = new DuAnTable();
-                tableDuAn.setModel(duAnTable);
             }
         });
         setVisible(true);
@@ -130,6 +128,7 @@ public class DuAnQL extends JFrame{
             }
         }
         duAns.set(n, duAn);
+        System.out.println(duAns);
         BufferedWriter writer = null;
         try{
             File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
@@ -154,6 +153,9 @@ public class DuAnQL extends JFrame{
                 throw new RuntimeException(e);
             }
         }
+        init();
+        DuAnTable duAnTable = new DuAnTable();
+        tableDuAn.setModel(duAnTable);
     }
     public void loadDataFromFile() throws IOException {
         try {
@@ -177,6 +179,8 @@ public class DuAnQL extends JFrame{
         }
     }
     public void init(){
+        duAnList = new ArrayList<>();
+        phongBanPhuTrach = new HashSet<>();
         try {
             loadDataFromFile();
         } catch (IOException e) {
