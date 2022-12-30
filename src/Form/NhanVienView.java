@@ -5,6 +5,7 @@ import javax.swing.table.AbstractTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -103,10 +104,13 @@ public class NhanVienView extends JFrame {
         }
 
     }
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "NhanVien.txt";
+    File file = new File(DATA_FILE_PATH_NHAN_VIEN);
+    String absolutePath = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException {
         try {
             NhanVien x = null;
-            bufferedReader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt"));
+            bufferedReader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] a = line.split("\\|");

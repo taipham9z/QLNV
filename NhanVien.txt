@@ -1,0 +1,7 @@
+001|Nguyễn Văn C|Nam| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|2|1000000|100000
+001|Nguyễn Văn C|Nam| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|2|1000000|100000
+001|Nguyễn Văn C|Nam| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|2|1000000|100000
+002|Nguyễn Văn C|Nam| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|2|1000000|100000
+003|Nguyễn Văn E|Nữ| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|5|1000000|100000
+004|Nguyễn Văn F|Nam| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|2|1000000|1000000
+010|Nguyễn Văn C|Nam| Giám đốc|Phòng Giám đốc|0123243|Hà Nội|6|18|2|1000000|100000

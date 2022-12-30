@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.Buffer;
 
 public class DangKy extends JFrame {
-
+    public static final String DATA_FILE_PATH_QUAN_TRI = "TaiKhoanQuanTri.txt";
     private JPanel mainPanel;
     private JTextField txtTaiKhoan;
     private JTextField txtHoTen;
@@ -68,9 +68,10 @@ public class DangKy extends JFrame {
                 String taikhoan = txtTaiKhoan.getText();
                 String matkhau = String.valueOf(txtMatKhau.getPassword());
                 if(quanlyRadioButton.isSelected()){
-                    File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\TaiKhoanQuanTri.txt");
+                    File file = new File(DATA_FILE_PATH_QUAN_TRI);
+                    String absolutePath = file.getAbsolutePath();
                     try {
-                        writer = new BufferedWriter(new FileWriter(file, true));
+                        writer = new BufferedWriter(new FileWriter(absolutePath, true));
                         writer.write("\n" +taikhoan + "|" +matkhau);
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
@@ -82,9 +83,10 @@ public class DangKy extends JFrame {
                         }
                     }
                 }else{
-                    File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\TaiKhoanNhanVien.txt");
+                    File file = new File(DATA_FILE_PATH_QUAN_TRI);
+                    String absolutePath = file.getAbsolutePath();
                     try {
-                        writer = new BufferedWriter(new FileWriter(file, true));
+                        writer = new BufferedWriter(new FileWriter(absolutePath, true));
                         writer.write("\n" +taikhoan + "|" +matkhau);
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);

@@ -5,6 +5,7 @@ import javax.swing.table.AbstractTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -92,10 +93,13 @@ public class NhiemVuNV extends JFrame {
         }
 
     }
+    public static final String DATA_FILE_PATH_NHIEM_VU = "NhiemVu.txt";
+    File file = new File(DATA_FILE_PATH_NHIEM_VU);
+    String absolutePath = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException {
         try {
             NhiemVu x = null;
-            bufferedReader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhiemVu.txt"));
+            bufferedReader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] a = line.split("\\|");

@@ -115,16 +115,21 @@ public class TienLuongQL extends JFrame{
         btnDong.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                TrangChuQL trangChuQL = new TrangChuQL();
+                trangChuQL.setVisible(true);
                 dispose();
             }
         });
     }
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "NhanVien.txt";
+    File file = new File(DATA_FILE_PATH_NHAN_VIEN);
+    String absolutePath = file.getAbsolutePath();
     public void replaceNhanVien(NhanVien nhanVien, int n) throws IOException {
         BufferedReader reader = null;
         nhanVienList = new ArrayList<>();
         try {
             NhanVien x = null;
-            reader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt"));
+            reader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = reader.readLine()) != null) {
                 String[] a = line.split("\\|");
@@ -144,7 +149,7 @@ public class TienLuongQL extends JFrame{
         nhanVienList.set(n, nhanVien);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt");
+            File file = new File(absolutePath);
             //writer = new FileWriter(file, true);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < nhanVienList.size(); i++) {
@@ -167,7 +172,7 @@ public class TienLuongQL extends JFrame{
     public void loadDataFromFile() throws IOException{
         try {
             NhanVien x = null;
-            bufferedReader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt"));
+            bufferedReader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] a = line.split("\\|");

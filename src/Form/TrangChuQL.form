@@ -111,7 +111,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Trang chủ"/>
+          <text value="Trang chủ quản lý"/>
         </properties>
       </component>
     </children>

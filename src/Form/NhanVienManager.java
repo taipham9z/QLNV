@@ -378,10 +378,13 @@ public class NhanVienManager extends JFrame {
             }
         });
     }
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "NhanVien.txt";
+    File file = new File(DATA_FILE_PATH_NHAN_VIEN);
+    String absolutePath = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException{
         try {
             NhanVien x = null;
-            bufferedReader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt"));
+            bufferedReader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] a = line.split("\\|");

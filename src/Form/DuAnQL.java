@@ -117,12 +117,15 @@ public class DuAnQL extends JFrame{
             }
         });
     }
+    public static final String DATA_FILE_PATH_DU_AN = "DuAn.txt";
+    File file = new File(DATA_FILE_PATH_DU_AN);
+    String absolutePath = file.getAbsolutePath();
     public void replaceDuAn(DuAn duAn, int n) {
         List<DuAn> duAns = new ArrayList<>();
         BufferedReader reader = null;
         try {
             DuAn x;
-            reader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt"));
+            reader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = reader.readLine()) != null) {
                 String[] a = line.split("\\|");
@@ -141,7 +144,7 @@ public class DuAnQL extends JFrame{
         duAns.set(n, duAn);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
+            File file = new File(absolutePath);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < duAns.size(); i++) {
                 String w;
@@ -170,7 +173,7 @@ public class DuAnQL extends JFrame{
         duAnList.remove(n);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
+            File file = new File(absolutePath);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < duAnList.size(); i++) {
                 String w;
@@ -193,7 +196,7 @@ public class DuAnQL extends JFrame{
     }
     public void addDuAn(){
         BufferedWriter writer;
-        File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt");
+        File file = new File(absolutePath);
         try {
             writer = new BufferedWriter(new FileWriter(file, true));
             String input = "\n" + txtMaDA.getText() + "|" + txtTenDA.getText() + "|" + txtChuDauTu.getText() + "|" + txtDuTinhChiPhi.getText() + "|" + (String) comboBox1.getSelectedItem() + "|" + txtChiPhiPhatSinh.getText() + "|" + txtGhiChu.getText();
@@ -213,7 +216,7 @@ public class DuAnQL extends JFrame{
     public void loadDataFromFile() throws IOException {
         try {
             DuAn x = null;
-            bufferedReader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt"));
+            bufferedReader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] a = line.split("\\|");

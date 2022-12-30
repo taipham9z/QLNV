@@ -117,9 +117,15 @@ public class NhiemVuQL extends JFrame {
             }
         });
     }
+    public static final String DATA_FILE_PATH_NHIEM_VU = "NhiemVu.txt";
+    public static final String DATA_FILE_PATH_CHUC_VU = "ChucVu.txt";
+    File file = new File(DATA_FILE_PATH_NHIEM_VU);
+    File file1 = new File(DATA_FILE_PATH_CHUC_VU);
+    String absolutePath = file.getAbsolutePath();
+    String absolutePath1 = file1.getAbsolutePath();
     public void addNhiemVu(){
         BufferedWriter writer;
-        File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhiemVu.txt");
+        File file = new File(absolutePath);
         try {
             writer = new BufferedWriter(new FileWriter(file, true));
             String input = "\n" + (String) comboBoxChucVu.getSelectedItem() + "|" + (String) comboBoxPhongBan.getSelectedItem() + "|" + textArea1.getText();
@@ -140,7 +146,7 @@ public class NhiemVuQL extends JFrame {
         nhiemVuList.remove(n);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhiemVu.txt");
+            File file = new File(absolutePath);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < nhiemVuList.size(); i++) {
                 String w;
@@ -166,7 +172,7 @@ public class NhiemVuQL extends JFrame {
         BufferedReader reader = null;
         try {
             NhiemVu x = null;
-            reader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhiemVu.txt"));
+            reader = new BufferedReader(new FileReader(absolutePath));
             String line = "";
             while ((line = reader.readLine()) != null) {
                 String[] a = line.split("\\|");
@@ -186,7 +192,7 @@ public class NhiemVuQL extends JFrame {
         nhiemVus.set(n, nhiemVu);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhiemVu.txt");
+            File file = new File(absolutePath);
             //writer = new FileWriter(file, true);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < nhiemVus.size(); i++) {
@@ -217,8 +223,8 @@ public class NhiemVuQL extends JFrame {
         phongBan = new ArrayList<>();
         noiDung = new ArrayList<>();
         nhiemVuList = new ArrayList<>();
-        File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhiemVu.txt");
-        File file1 = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\ChucVu.txt");
+        File file = new File(absolutePath);
+        File file1 = new File(absolutePath1);
         try{
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = "";

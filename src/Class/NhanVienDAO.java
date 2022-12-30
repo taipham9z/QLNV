@@ -29,7 +29,9 @@ public class NhanVienDAO {
             System.out.println(nhanVien.toString());
         }
     }
-
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "NhanVien.txt";
+    File file = new File(DATA_FILE_PATH_NHAN_VIEN);
+    String absolutePathNhanVien = file.getAbsolutePath();
     public List<NhanVien> getNhanVienList() {
         return nhanVienList;
     }
@@ -38,7 +40,7 @@ public class NhanVienDAO {
         nhanViens = new ArrayList<>();
         try {
             NhanVien x = null;
-            reader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt"));
+            reader = new BufferedReader(new FileReader(absolutePathNhanVien));
             String line = "";
             while ((line = reader.readLine()) != null) {
                 String[] a = line.split("\\|");
@@ -58,7 +60,7 @@ public class NhanVienDAO {
         nhanViens.set(n, nhanVien);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt");
+            File file = new File(absolutePathNhanVien);
             //writer = new FileWriter(file, true);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < nhanViens.size(); i++) {
@@ -83,7 +85,7 @@ public class NhanVienDAO {
         nhanViens = new ArrayList<>();
         try {
             NhanVien x = null;
-            reader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt"));
+            reader = new BufferedReader(new FileReader(absolutePathNhanVien));
             String line = "";
             while ((line = reader.readLine()) != null) {
                 String[] a = line.split("\\|");
@@ -103,7 +105,7 @@ public class NhanVienDAO {
         nhanViens.remove(n);
         BufferedWriter writer = null;
         try{
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt");
+            File file = new File(absolutePathNhanVien);
             //writer = new FileWriter(file, true);
             writer = new BufferedWriter(new FileWriter(file));
             for (int i = 0; i < nhanViens.size(); i++) {
@@ -126,7 +128,7 @@ public class NhanVienDAO {
         BufferedWriter writer = null;
         BufferedReader reader = null;
         try {
-            File file = new File("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\NhanVien.txt");
+            File file = new File(absolutePathNhanVien);
             //writer = new FileWriter(file, true);
             writer = new BufferedWriter(new FileWriter(file, true));
             reader = new BufferedReader(new FileReader(file));

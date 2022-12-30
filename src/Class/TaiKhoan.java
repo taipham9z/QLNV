@@ -1,6 +1,7 @@
 package Class;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Objects;
@@ -8,7 +9,9 @@ import java.util.Objects;
 public class TaiKhoan {
     private String tenDangNhap;
     private String matKhau;
-
+    public static final String DATA_FILE_PATH_QUAN_TRI = "TaiKhoanQuanTri.txt";
+    File file = new File(DATA_FILE_PATH_QUAN_TRI);
+    String absolutePath = file.getAbsolutePath();
     public TaiKhoan() {
 
     }
@@ -33,13 +36,12 @@ public class TaiKhoan {
     public void setMatKhau(String matKhau) {
         this.matKhau = matKhau;
     }
-    String fileNameQuanTri = "D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\TaiKhoanQuanTri.txt";
 
     public int readFileTaiKhoanQuanTri(){
         BufferedReader reader = null;
         int check = 0, i;
             try{
-                reader = new BufferedReader(new FileReader(fileNameQuanTri));
+                reader = new BufferedReader(new FileReader(absolutePath));
                 String line = "";
                 while ((line = reader.readLine()) != null){
                     check = 0;
@@ -55,12 +57,15 @@ public class TaiKhoan {
             }
             return 1;
     }
-    String fileNameNhanVien = "D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\TaiKhoanNhanVien.txt";
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "TaiKhoanNhanVien.txt";
+    File file1= new File(DATA_FILE_PATH_QUAN_TRI);
+    String absolutePath1 = file.getAbsolutePath();
+    //String fileNameNhanVien = "D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\TaiKhoanNhanVien.txt";
     public int readFileTaiKhoanNhanVien(){
         BufferedReader reader = null;
         int check = 0, i;
         try{
-            reader = new BufferedReader(new FileReader(fileNameNhanVien));
+            reader = new BufferedReader(new FileReader(absolutePath1));
             String line = "";
             while ((line = reader.readLine()) != null){
                 check = 0;

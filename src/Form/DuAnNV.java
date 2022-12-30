@@ -5,6 +5,7 @@ import javax.swing.table.AbstractTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,10 +53,13 @@ public class DuAnNV extends JFrame {
             }
         });
     }
+    public static final String DATA_FILE_PATH_DU_AN = "DuAn.txt";
+    File file = new File(DATA_FILE_PATH_DU_AN);
+    String absolutePathDuAn = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException {
         try {
             DuAn x = null;
-            bufferedReader = new BufferedReader(new FileReader("D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\DuAn.txt"));
+            bufferedReader = new BufferedReader(new FileReader(absolutePathDuAn));
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 String[] a = line.split("\\|");
