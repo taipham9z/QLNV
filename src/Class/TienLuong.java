@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class TienLuong {
     private long luongCoBan;
+    private int soNgayNghi;
     private long tienThuong;
 
-    public TienLuong(long luongCoBan, long tienThuong) {
-        this.luongCoBan = luongCoBan;
-        this.tienThuong = tienThuong;
+    public TienLuong() {
     }
 
-    public TienLuong() {
+    public TienLuong(long luongCoBan, int soNgayNghi, long tienThuong) {
+        this.luongCoBan = luongCoBan;
+        this.soNgayNghi = soNgayNghi;
+        this.tienThuong = tienThuong;
     }
 
     public long getLuongCoBan() {
@@ -22,15 +24,19 @@ public class TienLuong {
         this.luongCoBan = luongCoBan;
     }
 
+    public int getSoNgayNghi() {
+        return soNgayNghi;
+    }
+
+    public void setSoNgayNghi(int soNgayNghi) {
+        this.soNgayNghi = soNgayNghi;
+    }
+
     public long getTienThuong() {
         return tienThuong;
     }
 
     public void setTienThuong(long tienThuong) {
         this.tienThuong = tienThuong;
-    }
-    @Override
-    public String toString() {
-        return " | " + luongCoBan + " | " + tienThuong;
     }
 }

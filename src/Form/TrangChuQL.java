@@ -56,7 +56,8 @@ public class TrangChuQL extends JFrame{
         btnQuanLyTienLuong.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new TienLuongQL().setVisible(true);
+                dispose();
             }
         });
 
