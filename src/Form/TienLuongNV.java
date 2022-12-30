@@ -1,4 +1,6 @@
 package Form;
 
-public class TienLuongNV {
+import javax.swing.*;
+
+public class TienLuongNV extends JFrame {
 }

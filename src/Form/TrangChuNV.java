@@ -50,7 +50,7 @@ public class TrangChuNV extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 TienLuongNV tienLuongNV = new TienLuongNV();
-                setVisible(true);
+                tienLuongNV.setVisible(true);
                 dispose();
             }
         });
@@ -58,7 +58,7 @@ public class TrangChuNV extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 DuAnNV duAnNV = new DuAnNV();
-                setVisible(true);
+                duAnNV.setVisible(true);
                 dispose();
             }
         });
