@@ -117,8 +117,8 @@ public class NhiemVuQL extends JFrame {
             }
         });
     }
-    public static final String DATA_FILE_PATH_NHIEM_VU = "NhiemVu.txt";
-    public static final String DATA_FILE_PATH_CHUC_VU = "ChucVu.txt";
+    public static final String DATA_FILE_PATH_NHIEM_VU = "src\\Data\\NhiemVu.txt";
+    public static final String DATA_FILE_PATH_CHUC_VU = "src\\Data\\ChucVu.txt";
     File file = new File(DATA_FILE_PATH_NHIEM_VU);
     File file1 = new File(DATA_FILE_PATH_CHUC_VU);
     String absolutePath = file.getAbsolutePath();

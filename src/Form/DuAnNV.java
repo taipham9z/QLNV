@@ -53,7 +53,7 @@ public class DuAnNV extends JFrame {
             }
         });
     }
-    public static final String DATA_FILE_PATH_DU_AN = "DuAn.txt";
+    public static final String DATA_FILE_PATH_DU_AN = "src\\Data\\DuAn.txt";
     File file = new File(DATA_FILE_PATH_DU_AN);
     String absolutePathDuAn = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException {

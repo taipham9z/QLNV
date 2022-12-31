@@ -93,7 +93,7 @@ public class NhiemVuNV extends JFrame {
         }
 
     }
-    public static final String DATA_FILE_PATH_NHIEM_VU = "NhiemVu.txt";
+    public static final String DATA_FILE_PATH_NHIEM_VU = "src\\Data\\NhiemVu.txt";
     File file = new File(DATA_FILE_PATH_NHIEM_VU);
     String absolutePath = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException {

@@ -9,7 +9,7 @@ import java.util.Objects;
 public class TaiKhoan {
     private String tenDangNhap;
     private String matKhau;
-    public static final String DATA_FILE_PATH_QUAN_TRI = "TaiKhoanQuanTri.txt";
+    public static final String DATA_FILE_PATH_QUAN_TRI = "src\\Data\\TaiKhoanQuanTri.txt";
     File file = new File(DATA_FILE_PATH_QUAN_TRI);
     String absolutePath = file.getAbsolutePath();
     public TaiKhoan() {
@@ -57,10 +57,9 @@ public class TaiKhoan {
             }
             return 1;
     }
-    public static final String DATA_FILE_PATH_NHAN_VIEN = "TaiKhoanNhanVien.txt";
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "src\\Data\\TaiKhoanNhanVien.txt";
     File file1= new File(DATA_FILE_PATH_QUAN_TRI);
     String absolutePath1 = file.getAbsolutePath();
-    //String fileNameNhanVien = "D:\\HK5\\LapTrinhJava\\QLNVCongTy\\src\\Data\\TaiKhoanNhanVien.txt";
     public int readFileTaiKhoanNhanVien(){
         BufferedReader reader = null;
         int check = 0, i;

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.Buffer;
 
 public class DangKy extends JFrame {
-    public static final String DATA_FILE_PATH_QUAN_TRI = "TaiKhoanQuanTri.txt";
+    public static final String DATA_FILE_PATH_QUAN_TRI = "Data\\TaiKhoanQuanTri.txt";
     private JPanel mainPanel;
     private JTextField txtTaiKhoan;
     private JTextField txtHoTen;

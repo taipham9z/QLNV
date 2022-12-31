@@ -117,7 +117,7 @@ public class DuAnQL extends JFrame{
             }
         });
     }
-    public static final String DATA_FILE_PATH_DU_AN = "DuAn.txt";
+    public static final String DATA_FILE_PATH_DU_AN = "src\\Data\\DuAn.txt";
     File file = new File(DATA_FILE_PATH_DU_AN);
     String absolutePath = file.getAbsolutePath();
     public void replaceDuAn(DuAn duAn, int n) {

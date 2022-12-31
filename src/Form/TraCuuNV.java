@@ -36,7 +36,7 @@ public class TraCuuNV extends JFrame{
             }
         });
     }
-    public static final String DATA_FILE_PATH_NHAN_VIEN = "NhanVien.txt";
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "src\\Data\\NhanVien.txt";
     File file = new File(DATA_FILE_PATH_NHAN_VIEN);
     String absolutePath = file.getAbsolutePath();
     public void loadDataFromFile() throws IOException {

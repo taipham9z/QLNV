@@ -29,7 +29,7 @@ public class NhanVienDAO {
             System.out.println(nhanVien.toString());
         }
     }
-    public static final String DATA_FILE_PATH_NHAN_VIEN = "NhanVien.txt";
+    public static final String DATA_FILE_PATH_NHAN_VIEN = "src\\Data\\NhanVien.txt";
     File file = new File(DATA_FILE_PATH_NHAN_VIEN);
     String absolutePathNhanVien = file.getAbsolutePath();
     public List<NhanVien> getNhanVienList() {
