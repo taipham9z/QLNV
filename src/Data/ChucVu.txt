@@ -1,8 +1,0 @@
-Kỹ sư|Phòng chiến lược và phát triển
-Công nhân|Phòng lao động
-Nhân viên|Phòng lao động
-Giám đốc|Phòng điều hành
-Thư kí|Phòng kiểm toán
-Trưởng phòng|Phòng điều hành
-Quản lý|Phòng điều hành
-Bảo vệ|Phòng nhân sự

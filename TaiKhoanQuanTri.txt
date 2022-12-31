@@ -1,4 +1,1 @@
-taipham|1234
-taipham|12345
 admin|admin
-admin|1234
