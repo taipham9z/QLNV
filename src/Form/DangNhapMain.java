@@ -20,13 +20,18 @@ public class DangNhapMain extends JFrame{
     private JButton btnDangKy;
     private JLabel lbDangNhap;
 
-    private static DangNhapMain dangNhapMain = new DangNhapMain();
     public DangNhapMain(){
         setContentPane(mainPanel);
         setSize(432, 256);
         setTitle("Đăng nhập/Đăng ký");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        SwingUtilities.updateComponentTreeUI(DangNhapMain.this);
         //Đăng ký
         btnDangKy.addActionListener(new ActionListener() {
             @Override
@@ -73,10 +78,6 @@ public class DangNhapMain extends JFrame{
             }
 
         });
-    }
-    public static void main(String[] args) {
-        dangNhapMain.setVisible(true);
-
     }
 
 }
