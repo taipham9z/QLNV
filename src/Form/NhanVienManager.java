@@ -40,7 +40,7 @@ public class NhanVienManager extends JFrame {
     private NhanVien nhanVienSelected;
     public NhanVienManager(){
         setContentPane(mainPanel);
-        setSize(1000, 700);
+        setSize(1500, 700);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setTitle("Quản lý nhân viên");

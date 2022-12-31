@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="QLNVCongTy:jar">
-    <output-path>$PROJECT_DIR$/src</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/QLNVCongTy_jar</output-path>
     <root id="archive" name="QLNVCongTy.jar">
       <element id="module-output" name="QLNVCongTy" />
     </root>
