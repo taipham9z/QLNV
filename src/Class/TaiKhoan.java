@@ -58,8 +58,8 @@ public class TaiKhoan {
             return 1;
     }
     public static final String DATA_FILE_PATH_NHAN_VIEN = "src\\Data\\TaiKhoanNhanVien.txt";
-    File file1= new File(DATA_FILE_PATH_QUAN_TRI);
-    String absolutePath1 = file.getAbsolutePath();
+    File file1= new File(DATA_FILE_PATH_NHAN_VIEN);
+    String absolutePath1 = file1.getAbsolutePath();
     public int readFileTaiKhoanNhanVien(){
         BufferedReader reader = null;
         int check = 0, i;
