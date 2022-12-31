@@ -67,36 +67,46 @@ public class DangKy extends JFrame {
                 BufferedWriter writer = null;
                 String taikhoan = txtTaiKhoan.getText();
                 String matkhau = String.valueOf(txtMatKhau.getPassword());
-                if(quanlyRadioButton.isSelected()){
-                    File file = new File(DATA_FILE_PATH_QUAN_TRI);
-                    String absolutePath = file.getAbsolutePath();
-                    try {
-                        writer = new BufferedWriter(new FileWriter(absolutePath, true));
-                        writer.write("\n" +taikhoan + "|" +matkhau);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }finally {
+                String xacnhanmatkhau = String.valueOf(txtXacNhanMatKhau.getPassword());
+                if(xacnhanmatkhau.equals(matkhau)){
+                    if(quanlyRadioButton.isSelected()){
+                        File file = new File(DATA_FILE_PATH_QUAN_TRI);
+                        String absolutePath = file.getAbsolutePath();
                         try {
-                            writer.close();
+                            writer = new BufferedWriter(new FileWriter(absolutePath, true));
+                            writer.write("\n" +taikhoan + "|" +matkhau);
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
+                        }finally {
+                            try {
+                                writer.close();
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
                         }
-                    }
-                }else{
-                    File file = new File(DATA_FILE_PATH_QUAN_TRI);
-                    String absolutePath = file.getAbsolutePath();
-                    try {
-                        writer = new BufferedWriter(new FileWriter(absolutePath, true));
-                        writer.write("\n" +taikhoan + "|" +matkhau);
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }finally {
+                    }else{
+                        File file = new File(DATA_FILE_PATH_QUAN_TRI);
+                        String absolutePath = file.getAbsolutePath();
                         try {
-                            writer.close();
+                            writer = new BufferedWriter(new FileWriter(absolutePath, true));
+                            writer.write("\n" +taikhoan + "|" +matkhau);
                         } catch (IOException ex) {
                             throw new RuntimeException(ex);
+                        }finally {
+                            try {
+                                writer.close();
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
                         }
                     }
+                    JOptionPane.showMessageDialog(DangKy.this, "Đăng ký thành công");
+                    DangNhapMain dangNhapMain = new DangNhapMain();
+                    dangNhapMain.setVisible(true);
+                    dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(DangKy.this, "Xác nhận mật khẩu bị sai");
                 }
             }
         });
