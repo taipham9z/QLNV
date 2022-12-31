@@ -1,2 +1,2 @@
 admin|admin
-tai|1234
+nhanvien|nhanvien
