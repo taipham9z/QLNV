@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>D:\HK5\LapTrinhJava\QLNVCongTy\out\artifacts\QLNVCongTy_jar\QLNVCongTy.jar</jar>
+  <jar>D:\HK5\LapTrinhJava\QLNVCongTy\src\Launch4j\QLNVCongTy.jar</jar>
   <outfile>D:\HK5\LapTrinhJava\QLNVCongTy\QLNVCongTy.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
@@ -10,10 +10,10 @@
   <priority>idle</priority>
   <downloadUrl></downloadUrl>
   <supportUrl></supportUrl>
-  <stayAlive>true</stayAlive>
+  <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>D:\HK5\LapTrinhJava\QLNVCongTy\src\icon.ico</icon>
+  <icon>D:\HK5\LapTrinhJava\QLNVCongTy\src\Launch4j\icon.ico</icon>
   <jre>
     <path>%JAVA_HOME%;%PATH%</path>
     <requiresJdk>false</requiresJdk>
