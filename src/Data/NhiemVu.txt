@@ -1,0 +1,7 @@
+Giám đốc|Phòng giám đốc|Quản lý mọi hoạt động trong công ty
+Nhân viên|Phòng lao động|Nhận việc và làm theo yêu cầu quản lý
+Công nhân|Phòng lao động|Làm một công việc nhất định trong quy trình
+Thư kí|Phòng nhân sự|Sắp xếp lịch cho giám đốc
+Kỹ sư|Phòng chiến lược và phát triển|Thiết kế các chương trình
+Quản lý|Phòng chiến lược và phát triển|Nhận và giao việc cho nhân viên từ giám đốc
+Bảo vệ|Phòng lao động|Bảo vệ công ty
